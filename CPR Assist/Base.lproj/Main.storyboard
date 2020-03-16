@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="skh-R9-qQW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--CPR Assist-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CPR_Assist" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,31 +16,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OUp-he-L0h">
-                                <rect key="frame" x="0.0" y="84" width="414" height="564.5"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="517"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPR Assist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FT-WS-yvh">
-                                        <rect key="frame" x="129" y="0.0" width="156" height="39.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CPR_graphic.png" translatesAutoresizingMaskIntoConstraints="NO" id="FSM-Fj-c88">
-                                        <rect key="frame" x="0.0" y="47.5" width="414" height="362"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="362"/>
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrD-F4-SPb">
-                                        <rect key="frame" x="158" y="417.5" width="98" height="43"/>
+                                        <rect key="frame" x="158" y="370" width="98" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title=" Start" image="play.fill" catalog="system">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="xKB-EZ-tZd" kind="presentation" id="vQU-lH-7mg"/>
+                                            <segue destination="LWd-TV-hTo" kind="modal" id="d6u-Q6-2HZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2u-bQ-pQv">
-                                        <rect key="frame" x="135" y="468.5" width="144" height="45"/>
+                                        <rect key="frame" x="135" y="421" width="144" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title=" Tutorial" image="checkmark.shield" catalog="system">
@@ -51,7 +45,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a99-If-ipD">
-                                        <rect key="frame" x="128" y="521.5" width="158" height="43"/>
+                                        <rect key="frame" x="128" y="474" width="158" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title=" Settings" image="gear" catalog="system">
@@ -69,16 +63,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="CPR Assist" id="3g8-Ls-8iW">
+                        <barButtonItem key="rightBarButtonItem" title="\u2699" id="vyG-ih-Ryi">
+                            <connections>
+                                <segue destination="RXk-QT-8EI" kind="show" id="9x8-xB-i5P"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="settingsButton" destination="vyG-ih-Ryi" id="ARD-J7-1QC"/>
                         <outlet property="start" destination="jrD-F4-SPb" id="sVG-4V-YPc"/>
                         <outlet property="tutorial" destination="s2u-bQ-pQv" id="Lt0-4P-JDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57.971014492753625" y="129.91071428571428"/>
+            <point key="canvasLocation" x="852.17391304347836" y="129.91071428571428"/>
         </scene>
-        <!--Main Page-->
+        <!--CPR Assist-->
         <scene sceneID="4FX-9h-6xZ">
             <objects>
                 <viewController id="xKB-EZ-tZd" customClass="MainPage" customModule="CPR_Assist" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,34 +89,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AIq-vE-w3j">
-                                <rect key="frame" x="0.0" y="10" width="414" height="73"/>
+                                <rect key="frame" x="0.0" y="66" width="414" height="33.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="twK-dc-sW8">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="39.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRw-gx-vmY">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="39.5"/>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Done">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPR Assist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcP-9l-ScP">
-                                                <rect key="frame" x="68" y="0.0" width="287" height="39.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0A9-H4-Db4">
-                                                <rect key="frame" x="355" y="0.0" width="59" height="39.5"/>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <state key="normal" title="  " image="gear" catalog="system"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compressions: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcI-RF-XaK">
-                                        <rect key="frame" x="0.0" y="39.5" width="414" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -175,7 +153,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart-hands-removebg-preview.png" translatesAutoresizingMaskIntoConstraints="NO" id="6D7-TV-WwP">
-                                <rect key="frame" x="20" y="133" width="374" height="250"/>
+                                <rect key="frame" x="20" y="149.5" width="374" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="wfT-tJ-pug"/>
                                 </constraints>
@@ -195,14 +173,76 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YFA-3E-nGs"/>
                     </view>
+                    <navigationItem key="navigationItem" title="CPR Assist" id="bhI-ym-2xJ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="sp5-BP-dUg"/>
+                        <barButtonItem key="rightBarButtonItem" title="\u2699" id="z8N-jH-zvu">
+                            <connections>
+                                <segue destination="RXk-QT-8EI" kind="show" id="ZeU-8t-2QJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="compressions" destination="HcI-RF-XaK" id="3md-ru-Gfk"/>
                         <outlet property="heartpic" destination="6D7-TV-WwP" id="I04-rQ-rzl"/>
+                        <outlet property="settingsButton" destination="z8N-jH-zvu" id="eik-lT-pZu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1g-G2-4ja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="650.72463768115949" y="129.91071428571428"/>
+            <point key="canvasLocation" x="2471.0144927536235" y="129.91071428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zs4-Cy-SNh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="skh-R9-qQW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="smN-hk-gJb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1pq-le-c3c">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zOS-id-vIz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcH-8S-LxO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="129.91071428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="upr-ca-6se">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LWd-TV-hTo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a9h-pj-0Y1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xKB-EZ-tZd" kind="relationship" relationship="rootViewController" id="Jc7-PT-AJv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbS-Yp-Tag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1560.8695652173915" y="129.91071428571428"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="x9J-ZZ-b6y">
+            <objects>
+                <viewController id="RXk-QT-8EI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FIh-r7-Hae">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="oVA-W0-wuX"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="qfW-Ih-wuJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNe-GQ-82q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701" y="852"/>
         </scene>
     </scenes>
     <resources>
@@ -212,4 +252,7 @@
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZeU-8t-2QJ"/>
+    </inferredMetricsTieBreakers>
 </document>

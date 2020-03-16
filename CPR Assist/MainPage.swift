@@ -16,6 +16,7 @@ class MainPage: UIViewController {
     var player: AVAudioPlayer?
     var player2: AVAudioPlayer?
     
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var compressions: UILabel!
     @IBOutlet weak var heartpic: UIImageView!
     
@@ -39,6 +40,9 @@ class MainPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.settingsButton.title = NSString(string: "\u{2699}\u{0000FE0E}") as String
+        if let font = UIFont(name: "Helvetica", size: 24.0){ self.settingsButton.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        }
         compressions.text = "Compressions \(counter)"
         let interval: Double = 60/100
         setBeatTimer()
