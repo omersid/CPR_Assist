@@ -17,6 +17,7 @@
 		A04121AA241EC1D3008DBD69 /* CPR_graphic.png in Resources */ = {isa = PBXBuildFile; fileRef = A04121A9241EC1D3008DBD69 /* CPR_graphic.png */; };
 		A04121AE241F036A008DBD69 /* Heart-hands-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = A04121AD241F036A008DBD69 /* Heart-hands-removebg-preview.png */; };
 		A04121B0241F15DA008DBD69 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04121AF241F15DA008DBD69 /* MainPage.swift */; };
+		A04121B2241F2577008DBD69 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = A04121B1241F2577008DBD69 /* beep.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A04121A9241EC1D3008DBD69 /* CPR_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CPR_graphic.png; path = ../../../CPR_graphic.png; sourceTree = "<group>"; };
 		A04121AD241F036A008DBD69 /* Heart-hands-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Heart-hands-removebg-preview.png"; path = "../../../../Downloads/Heart-hands-removebg-preview.png"; sourceTree = "<group>"; };
 		A04121AF241F15DA008DBD69 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		A04121B1241F2577008DBD69 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../../../Downloads/beep.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		A0412186241EB8B7008DBD69 /* CPR Assist */ = {
 			isa = PBXGroup;
 			children = (
+				A04121B1241F2577008DBD69 /* beep.wav */,
 				A04121AD241F036A008DBD69 /* Heart-hands-removebg-preview.png */,
 				A0412187241EB8B7008DBD69 /* AppDelegate.swift */,
 				A0412189241EB8B7008DBD69 /* SceneDelegate.swift */,
@@ -194,6 +197,7 @@
 				A0412194241EB8B9008DBD69 /* LaunchScreen.storyboard in Resources */,
 				A0412191241EB8B9008DBD69 /* Assets.xcassets in Resources */,
 				A041218F241EB8B7008DBD69 /* Main.storyboard in Resources */,
+				A04121B2241F2577008DBD69 /* beep.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
