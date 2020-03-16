@@ -100,10 +100,44 @@
                                 </subviews>
                             </stackView>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="bottom" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xT4-pY-dy0">
-                                <rect key="frame" x="0.0" y="612" width="414" height="176"/>
+                                <rect key="frame" x="0.0" y="518" width="414" height="270"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLi-CN-vtE">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Breaths every 30 Compressions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mny-YV-V3F">
+                                                <rect key="frame" x="0.0" y="0.0" width="365" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1F-Rw-xhb">
+                                                <rect key="frame" x="365" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="breathNoise:" destination="xKB-EZ-tZd" eventType="valueChanged" id="9W6-gW-SR2"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhR-MO-W0y">
+                                        <rect key="frame" x="0.0" y="47" width="414" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advanced Airway Placed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YN-hj-f37">
+                                                <rect key="frame" x="0.0" y="0.0" width="365" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaB-zl-axL">
+                                                <rect key="frame" x="365" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="advancedIn:" destination="xKB-EZ-tZd" eventType="valueChanged" id="oFU-pG-ppW"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
                                     <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ilg-Dk-ETh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="94" width="414" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8M-Q7-xik">
                                                 <rect key="frame" x="0.0" y="0.0" width="205" height="80"/>
@@ -127,7 +161,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sMT-8Z-6fU">
-                                        <rect key="frame" x="0.0" y="96" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="190" width="414" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxG-er-gJF">
                                                 <rect key="frame" x="0.0" y="0.0" width="205" height="80"/>
@@ -182,6 +216,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="advancedAirwayButton" destination="aaB-zl-axL" id="cwi-hu-G2d"/>
+                        <outlet property="breathNoiseButton" destination="Q1F-Rw-xhb" id="uc0-CW-HIH"/>
+                        <outlet property="breathText" destination="mny-YV-V3F" id="POi-Yw-brU"/>
                         <outlet property="compressions" destination="HcI-RF-XaK" id="3md-ru-Gfk"/>
                         <outlet property="heartpic" destination="6D7-TV-WwP" id="I04-rQ-rzl"/>
                         <outlet property="settingsButton" destination="z8N-jH-zvu" id="eik-lT-pZu"/>
