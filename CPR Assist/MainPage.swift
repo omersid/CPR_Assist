@@ -26,6 +26,14 @@ class MainPage: UIViewController {
     var breathTimer = Timer()
     var breathPlayer: AVAudioPlayer?
     
+    var defibtime: Int = 120
+    var defibTimer = Timer()
+    var defibPulse: Bool = false
+    
+    
+    
+    @IBOutlet weak var defibButton: UIButton!
+    
     func setBeatPlayer() {
         guard let url = Bundle.main.url(forResource: "beep", withExtension: "wav") else { return }
         
@@ -44,7 +52,7 @@ class MainPage: UIViewController {
         }
     }
     func setBreathPlayer() {
-        guard let url = Bundle.main.url(forResource: "breath", withExtension: "wav") else { return }
+        guard let url = Bundle.main.url(forResource: "beep", withExtension: "wav") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -80,11 +88,15 @@ class MainPage: UIViewController {
         //Set default button behavior:
         breathNoiseButton.isOn = false
         advancedAirwayButton.isOn = false
+        breathNoiseButton.isHidden = true
         
         // Set settings button icon:
         self.settingsButton.title = NSString(string: "\u{2699}\u{0000FE0E}") as String
         if let font = UIFont(name: "Helvetica", size: 24.0){ self.settingsButton.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         }
+        
+        //Rounded corner buttons:
+        defibButton.layer.cornerRadius = 4
         
         //Set up players:
         setBeatPlayer()
@@ -103,6 +115,8 @@ class MainPage: UIViewController {
             breathText.text = "1 Breath every 6 Seconds"
         }else{
             breathNoiseButton.isHidden = true
+            breathTimer.invalidate()
+            breathNoiseButton.isOn = false
             breathText.text = "2 Breaths every 30 Compressions"
         }
     }
@@ -114,5 +128,33 @@ class MainPage: UIViewController {
         }else{
             breathTimer.invalidate()
         }
+    }
+    
+    @IBAction func defibButtonPress(_ sender: UIButton) {
+        if !defibPulse{
+            defibButton.isEnabled = false
+            defibTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block:{ timer in
+                self.defibtime -= 1
+                if (self.defibtime != 0){
+                    let min: Int = self.defibtime/60
+                    let sec: Int = self.defibtime%60
+                    var p: String = ":"
+                    if sec<10{
+                        p=":0"
+                    }
+                    UIView.animate(withDuration: 0, delay: 0.0, animations: {
+                        self.defibButton.setTitle( "Check Pulse in \(min)"+p+"\(sec)", for: .normal)
+                    })
+                }else{
+                    self.defibButton.isEnabled = true
+                    self.defibButton.setTitle( "Check Pulse!", for: .normal)
+                    self.defibtime = 120
+                }
+            })
+        }
+        else{
+            self.defibButton.setTitle( "AED Shock Given", for: .normal)
+        }
+        
     }
 }
